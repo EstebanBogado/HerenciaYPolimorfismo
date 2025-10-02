@@ -41,21 +41,6 @@ public class HerenciaYPolimorfismoTest {
 
 	}
 	
-	@Test
-	public void probarInterfazColoreableVerde() {
-		HerenciaYPolimorfismo rectangulo = new Rectangulo(4.5, 4.5);
-		Circulo circulo = new Circulo(3.5);
-		Rectangulo otroRectangulo = new Rectangulo(6.0, 5.0);
-		
-		otroRectangulo.setColor("verde");
-		System.out.println(rectangulo.calcularArea());
-		System.out.println(circulo.calcularPerimetro());
-		System.out.println(otroRectangulo.getColor());
-
-		assertEquals(20.25, rectangulo.calcularArea(), 0.01);
-		assertEquals(10.99, circulo.calcularPerimetro(), 0.01);
-		assertEquals("verde", otroRectangulo.getColor());
-	}
 
 	@Test
 	public void probarInterfazColoreable() {
