@@ -1,0 +1,50 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+import java.time.LocalTime;
+
+public class ProgPpal {
+
+	private SalaDeCine[] sala;
+	private Pelicula pelicula;
+	private LocalTime[] horario; // LocalTime.of(14, 30);
+	private LocalTime horaPrimeraFuncion, horaUltimaFuncion;
+	private int cantSalas;
+	private int cantFunciones;
+
+	public ProgPpal(SalaDeCine sala, LocalTime horario, LocalTime horaPrimeraFuncion, LocalTime horaUltimaFuncion) {
+		this.sala = new SalaDeCine[cantSalas];
+		this.horario = new LocalTime[cantFunciones];
+		this.setHoraPrimeraFuncion(horaPrimeraFuncion);
+		this.setHoraUltimaFuncion(horaUltimaFuncion);
+
+	}
+
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
+	}
+
+	public LocalTime getHoraPrimeraFuncion() {
+		return horaPrimeraFuncion;
+	}
+
+	public void setHoraPrimeraFuncion(LocalTime horaPrimeraFuncion) {
+		this.horaPrimeraFuncion = horaPrimeraFuncion;
+	}
+
+	public LocalTime getHoraUltimaFuncion() {
+		return horaUltimaFuncion;
+	}
+
+	public void setHoraUltimaFuncion(LocalTime horaUltimaFuncion) {
+		this.horaUltimaFuncion = horaUltimaFuncion;
+	}
+
+	public LocalTime[] getHorario() {
+		return horario;
+	}
+
+}

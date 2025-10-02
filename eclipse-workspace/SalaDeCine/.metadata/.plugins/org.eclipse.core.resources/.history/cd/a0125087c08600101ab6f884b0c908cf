@@ -1,0 +1,52 @@
+package ar.edu.unlam.alumno.pb2.clases;
+
+public class Traslados {
+
+	private String nombreSistema;
+	private double costoKm;
+	private double costoMinimoViaje;
+	private Destino destinos[];
+	private static final int CANTIDAD_DE_DESTINOS = 100;
+
+	/***
+	 * El constructor toma los valores necesarios para generar un nuevo traslado
+	 * 
+	 * @param nombreSistema
+	 * @param costoMinimoViaje
+	 * @param costoKm
+	 */
+	public Traslados(String nombreSistema, double costoMinimoViaje, double costoKm) {
+		this.nombreSistema = nombreSistema;
+		this.costoMinimoViaje = costoMinimoViaje;
+		this.costoKm = costoKm;
+	}
+
+	public boolean agregarDestino(Destino destinoViaje) {
+		if (existeDestino(destinoViaje.getCodigoDestino())) {
+			return false;
+		}
+		for (int i = 0; i < CANTIDAD_DE_DESTINOS; i++) {
+			if (this.destinos[i] == null) {
+				this.destinos[i] = destinoViaje;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean existeDestino(int codigoDestino) {
+
+		return this.buscarDestino(codigoDestino) != null;
+	}
+
+	private Destino buscarDestino(int codigoDestino) {
+
+		for (int i = 0; i < CANTIDAD_DE_DESTINOS; i++) {
+			if (this.destinos[i] != null && this.destinos[i].getCodigoDestino() == codigoDestino) {
+				return this.destinos[i];
+			}
+		}
+		return null;
+	}
+
+}

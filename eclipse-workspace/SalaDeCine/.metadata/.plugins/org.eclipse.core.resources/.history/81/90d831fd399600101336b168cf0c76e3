@@ -1,0 +1,71 @@
+package ar.edu.unlam.alumno.pb2.salaDeCineTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import ar.edu.unlam.alumno.pb2.salaDeCine.Accion;
+import ar.edu.unlam.alumno.pb2.salaDeCine.Comedia;
+import ar.edu.unlam.alumno.pb2.salaDeCine.Pelicula;
+import ar.edu.unlam.alumno.pb2.salaDeCine.Terror;
+
+public class TestPelículas {
+
+	@Test
+	public void crearUnaPelículaDeTerror() {
+
+		Terror peliculaTerror = new Terror("Drácula", 120, 16);
+
+		assertNotNull(peliculaTerror);
+		assertEquals("Drácula", peliculaTerror.getTitulo());
+		assertEquals(120, peliculaTerror.getDuracion(), 0.01);
+		assertEquals(16, peliculaTerror.getEdadMinima(), 0.01);
+
+	}
+
+	@Test
+	public void crearUnaPelículaDeAccion() {
+
+		Accion peliculaAccion = new Accion("Arma Mortal", 90, 16);
+
+		assertNotNull(peliculaAccion);
+		assertEquals("Arma Mortal", peliculaAccion.getTitulo());
+		assertEquals(90, peliculaAccion.getDuracion(), 0.01);
+		assertEquals(16, peliculaAccion.getEdadMinima(), 0.01);
+
+	}
+
+	@Test
+	public void crearUnaPelículaDeComedia() {
+
+		Comedia peliculaComedia = new Comedia("La máscara", 89, 13);
+
+		assertNotNull(peliculaComedia);
+		assertEquals("La máscara", peliculaComedia.getTitulo());
+		assertEquals(89, peliculaComedia.getDuracion(), 0.01);
+		assertEquals(13, peliculaComedia.getEdadMinima(), 0.01);
+
+	}
+
+	@Test
+	public void cargarUnaPeliculaYvalidarSuGenero() {
+		Integer esperado = 16;
+		Pelicula nuevaPelicula = new Pelicula("Arma Mortal", "Accion", 93);
+		nuevaPelicula.validarGenero();
+
+		assertEquals(esperado, nuevaPelicula.getEdadMinima(), 0.01);
+	}
+
+	@Test
+	public void cargarUnaPeliculaYvalidarSuGeneroYQueLaEdadMinimaSeaLaCorrecta() {
+
+		Integer edad = 16;
+		Pelicula nuevaPelicula = new Pelicula("Arma Mortal", "romantica", 93);
+		nuevaPelicula.validarGenero();
+		System.out.println(nuevaPelicula.getEdadMinima());
+
+		assertEquals(16, nuevaPelicula.getEdadMinima(), 0.01);
+		assertTrue(nuevaPelicula.validarEdadMinima(edad));
+
+	}
+}

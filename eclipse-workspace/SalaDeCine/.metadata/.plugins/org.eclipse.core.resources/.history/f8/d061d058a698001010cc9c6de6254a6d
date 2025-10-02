@@ -1,0 +1,35 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class Butaca {
+	private Boolean disponible;
+
+	/***
+	 * El contructor por defecto crea una butaca disponible, la que será ocupada
+	 * oportunamente y liberada nuevamente si así correspondiera
+	 * 
+	 * @param fila
+	 * @param columna
+	 * @param nombreOcupante
+	 */
+	public Butaca() {
+		this.disponible = true;
+
+	}
+
+	public void estaOcupada() {
+
+		this.disponible = false;
+
+	}
+
+	public void liberarButaca() {
+
+		this.disponible = true;
+
+	}
+
+	public boolean getButacaDisponible() {
+		return this.disponible;
+	}
+
+}

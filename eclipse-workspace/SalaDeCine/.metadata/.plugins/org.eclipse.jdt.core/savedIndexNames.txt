@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+G:\Mi unidad\PAPELES UNLAM\PROGRAMACIÓN BÁSICA II\PBII - 2do. CUATRIMESTRE 2025\TRABAJOS\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
+2654466914.index
+624272158.index
+3783137858.index
+579709770.index
+3471255472.index
+1865797976.index

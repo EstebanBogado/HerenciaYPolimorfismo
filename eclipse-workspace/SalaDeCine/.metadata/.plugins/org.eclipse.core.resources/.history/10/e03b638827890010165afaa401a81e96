@@ -1,0 +1,37 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class Asiento {
+	private String nombreComprador;
+	private boolean ocupado = false;
+
+	public Asiento(String nombreCompador, boolean estado) {
+		this.nombreComprador = nombreCompador;
+		this.ocupado = estado;
+	}
+
+	public boolean ocuparAsiento(String nombreComprador) {
+		return this.ocupado = true;
+
+	}
+
+	public boolean liberarAsiento(String nombreComprador) {
+		return this.ocupado = false;
+	}
+
+	public String getNombreComprador() {
+		return nombreComprador;
+	}
+
+	public void setNombreComprador(String nombreComprador) {
+		this.nombreComprador = nombreComprador;
+	}
+
+	public boolean isEstado() {
+		return ocupado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.ocupado = estado;
+	}
+
+}

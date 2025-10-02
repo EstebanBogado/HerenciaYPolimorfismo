@@ -1,0 +1,64 @@
+package ar.edu.unlam.alumno.pb2.mainTrasladoDeMascotas;
+
+import java.util.Scanner;
+
+import ar.edu.unlam.alumno.pb2.clases.Destino;
+import ar.edu.unlam.alumno.pb2.clases.Traslados;
+import ar.edu.unlam.alumno.pb2.clases.Viaje;
+
+public class Main {
+	private static Scanner teclado = new Scanner(System.in);
+
+	private static final int AGREGAR_DESTINO = 1, AGREGAR_VIAJE = 2, VER_RESUMEN = 3, SALIR = 9;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Traslados empresa;
+		String nombre;
+		double costoMínimo;
+		double costoPorKm;
+		int codigoDestino;
+		String nombreDestino;
+		Destino destinoViaje;
+		String nombrePasajero;
+		double porcentajeDeDescuento;
+
+		System.out.println("Ingrese nombre del sistema: ");
+		nombre = teclado.nextLine();
+
+		System.out.println("Ingrese el costo mínimo: ");
+		costoMínimo = teclado.nextDouble();
+
+		System.out.println("Ingrese el costo por kilómetro: ");
+		costoPorKm = teclado.nextDouble();
+
+		empresa = new Traslados(nombre, costoMínimo, costoPorKm);
+
+		System.out.println("Opciones: ");
+		System.out.println(AGREGAR_DESTINO + ".- Agregar destino.");
+		System.out.println(AGREGAR_VIAJE + ".- Agregar viaje.");
+		System.out.println(VER_RESUMEN + ".- Ver resumen.");
+		System.out.println(SALIR + ".- Salir.");
+		System.out.println("Ingrese la opción deseada.");
+
+		switch (teclado.nextInt()) {
+		case 1:
+			System.out.println("Ingrese código de destino: ");
+			codigoDestino = teclado.nextInt();
+			System.out.println("Ingrese nombre de destino: ");
+			nombreDestino = teclado.nextLine();
+			Destino destino = new Destino(codigoDestino, nombreDestino, costoPorKm);
+			break;
+		case 2:
+			System.out.println("Ingrese nombre del pasajero: ");
+			nombrePasajero = teclado.nextLine();
+			nombreDestino = teclado.nextLine();
+			porcentajeDeDescuento = teclado.nextDouble();
+			Viaje nuevoViaje = new Viaje(destinoViaje, nombrePasajero, nombreDestino, porcentajeDeDescuento);
+
+		}
+
+		teclado.close();
+	}
+
+}

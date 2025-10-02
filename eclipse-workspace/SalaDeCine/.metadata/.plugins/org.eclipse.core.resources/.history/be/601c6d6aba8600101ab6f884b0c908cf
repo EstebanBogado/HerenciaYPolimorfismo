@@ -1,0 +1,17 @@
+package ar.edu.unlam.alumno.pb2.clases;
+
+public class Traslados {
+	
+	private String nombre;
+	private double costoKm;
+	private double costoMinimoViaje;
+
+	public Traslados(String nombre, double costoMinimoViaje, double costoKm) {
+		this.nombre = nombre;
+		this.costoMinimoViaje = costoMinimoViaje;
+		this.costoKm = costoKm;
+	}
+	
+	
+
+}

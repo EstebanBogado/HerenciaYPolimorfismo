@@ -1,0 +1,60 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class SalaDeCine {
+
+	private Integer cantFilas;
+	private Integer cantColumnas;
+	private Pelicula peliculaEnCartelera;
+	private Butaca[][] butaca;
+
+	public SalaDeCine(Integer cantFilas, Integer cantColumnas, Pelicula peliculaEnCartelera) {
+		this.cantFilas = cantFilas;
+		this.cantColumnas = cantColumnas;
+		this.peliculaEnCartelera = peliculaEnCartelera;
+		this.butaca = new Butaca[cantFilas][cantColumnas];
+
+		for (int i = 0; i < this.cantFilas; i++) {
+			for (int j = 0; j < this.cantColumnas; j++) {
+				this.butaca[i][j] = new Butaca();
+			}
+		}
+	}
+
+	public Integer getCapacidadSala() {
+
+		return this.cantFilas * cantColumnas;
+	}
+
+	public Integer getCantFilas() {
+		return cantFilas;
+	}
+
+	public Integer getCantColumnas() {
+		return cantColumnas;
+	}
+
+	public Pelicula getPeliculaEnCartelera() {
+		return peliculaEnCartelera;
+	}
+
+	public Butaca[][] getButaca() {
+		return this.butaca;
+	}
+
+	public void venderEntrada(Espectador nuevoEspectador) {
+
+		if (peliculaEnCartelera.validarEdadMinima(nuevoEspectador.getEdadCliente())) {
+
+			for (int i = 0; i < this.cantFilas; i++) {
+				for (int j = 0; j < this.cantColumnas; j++) {
+					if (this.butaca[i][j].getButacaDisponible()) {
+						butaca[i][j].estaOcupada();
+						return;
+					}
+				}
+			}
+
+		}
+
+	}
+}

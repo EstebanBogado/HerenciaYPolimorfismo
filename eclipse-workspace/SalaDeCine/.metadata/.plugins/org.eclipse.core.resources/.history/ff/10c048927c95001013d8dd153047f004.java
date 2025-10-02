@@ -1,0 +1,5 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class Butaca {
+
+}

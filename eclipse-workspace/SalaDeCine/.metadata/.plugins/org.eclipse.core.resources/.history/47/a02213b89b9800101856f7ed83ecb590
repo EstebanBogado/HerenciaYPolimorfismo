@@ -1,0 +1,84 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class SalaDeCine {
+
+	private int cantFilas;
+	private int cantColumnas;
+	private Pelicula peliculaEnCartelera;
+	private Butaca[][] butaca;
+	private int butacasDisponibles;
+	private double horarioPelicula;
+
+	/***
+	 * El constructor SalaDeCine genera las butacas según el número de filas y
+	 * columnas y coloca ese valor en la cantidad de butacas disponibles, las que
+	 * irán siendo descontadas según se vendan entradas y se vayan ocupando
+	 * 
+	 * @param int cantFilas
+	 * @param int cantColumnas
+	 * @param Pelicula peliculaEnCartelera
+	 * @param double horarioPelicula
+	 */
+	public SalaDeCine(int cantFilas, int cantColumnas, Pelicula peliculaEnCartelera, double horarioPelicula) {
+		this.cantFilas = cantFilas;
+		this.cantColumnas = cantColumnas;
+		this.peliculaEnCartelera = peliculaEnCartelera;
+		this.butaca = new Butaca[cantFilas][cantColumnas];
+		this.butacasDisponibles = getCapacidadSala();
+		this.horarioPelicula = horarioPelicula;
+		for (int i = 0; i < this.cantFilas; i++) {
+			for (int j = 0; j < this.cantColumnas; j++) {
+				this.butaca[i][j] = new Butaca();
+			}
+		}
+	}
+
+	public void cambiarCartelera(Pelicula nuevaPelicula) {
+		this.peliculaEnCartelera = nuevaPelicula;
+	}
+
+	public int getCapacidadSala() {
+		return this.cantFilas * cantColumnas;
+	}
+
+	public int getCantFilas() {
+		return cantFilas;
+	}
+
+	public int getCantColumnas() {
+		return cantColumnas;
+	}
+
+	public Pelicula getPeliculaEnCartelera() {
+		return peliculaEnCartelera;
+	}
+
+	public double getHorarioPelicula() {
+		return horarioPelicula;
+	}
+
+	public Butaca[][] getButaca() {
+		return this.butaca;
+	}
+
+	public int getCantButacasDisponibles() {
+
+		return butacasDisponibles;
+	}
+
+	public void venderEntrada(Espectador cliente) {
+		if (peliculaEnCartelera.validarEdadMinima(cliente)) {
+			for (int i = 0; i < this.cantFilas; i++) {
+				for (int j = 0; j < this.cantColumnas; j++) {
+					if (this.butaca[i][j].getButacaDisponible()) {
+						butaca[i][j].estaOcupada();
+						butacasDisponibles--;
+						return;
+					}
+				}
+			}
+
+		}
+
+	}
+}

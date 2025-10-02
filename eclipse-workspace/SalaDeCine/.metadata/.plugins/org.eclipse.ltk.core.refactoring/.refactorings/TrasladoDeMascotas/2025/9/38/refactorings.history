@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;ar.edu.unlam.alumno.pb2.clases.Traslados.CostoFinalViaje(...)&apos; to &apos;costoFinalViaje&apos;&#x0D;&#x0A;- Original project: &apos;TrasladoDeMascotas&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.unlam.alumno.pb2.clases.Traslados.CostoFinalViaje(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;ar.edu.unlam.alumno.pb2.clases.Traslados.costoFinalViaje(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;CostoFinalViaje&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;ar.edu.unlam.alumno.pb2.clases{Traslados.java[Traslados~CostoFinalViaje~QViaje;" name="costoFinalViaje" references="true" stamp="1758039570124" version="1.0"/>
+</session>

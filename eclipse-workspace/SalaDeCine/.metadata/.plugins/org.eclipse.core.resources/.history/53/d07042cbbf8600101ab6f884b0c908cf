@@ -1,0 +1,22 @@
+package ar.edu.unlam.alumno.pb2.clases;
+
+public class Traslados {
+
+	private String nombreSistema;
+	private double costoKm;
+	private double costoMinimoViaje;
+
+	/***
+	 * El constructor toma los valores necesarios para generar un nuevo traslado
+	 * 
+	 * @param nombre
+	 * @param costoMinimoViaje
+	 * @param costoKm
+	 */
+	public Traslados(String nombreSistema, double costoMinimoViaje, double costoKm) {
+		this.nombreSistema = nombreSistema;
+		this.costoMinimoViaje = costoMinimoViaje;
+		this.costoKm = costoKm;
+	}
+
+}

@@ -1,0 +1,34 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class ProgPpal {
+
+	private SalaDeCine sala;
+	private Pelicula pelicula;
+ 
+	public ProgPpal(SalaDeCine sala, Pelicula pelicula) {
+		this.sala = sala;
+		this.pelicula = pelicula;
+	}
+	
+	
+	
+	
+
+	public SalaDeCine getSala() {
+		return sala;
+	}
+
+	public void setSala(SalaDeCine sala) {
+		this.sala = sala;
+	}
+
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
+	}
+
+
+}

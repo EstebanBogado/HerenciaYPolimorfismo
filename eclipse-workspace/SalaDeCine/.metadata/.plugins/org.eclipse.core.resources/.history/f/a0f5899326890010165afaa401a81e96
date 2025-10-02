@@ -1,0 +1,6 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class Asiento {
+	private String nombreComprador;
+	private boolean estado;
+}

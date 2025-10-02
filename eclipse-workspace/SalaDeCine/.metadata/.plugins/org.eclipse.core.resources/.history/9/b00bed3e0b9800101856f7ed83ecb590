@@ -1,0 +1,75 @@
+package ar.edu.unlam.alumno.pb2.salaDeCine;
+
+public class Pelicula {
+
+	private String titulo;
+	private String genero;
+	private Integer duracion;
+	private Integer edadMinima;
+
+	/***
+	 * El constructor valida que se cargue un género de película y que este sea
+	 * válido
+	 * 
+	 * @param titulo
+	 * @param genero
+	 * @param duracion
+	 * @param edadMinima
+	 */
+	public Pelicula(String titulo, String genero, Integer duracion, Integer edadMinima) {
+		this.titulo = titulo;
+		this.duracion = duracion;
+		this.edadMinima = edadMinima;
+		switch (genero.toLowerCase()) {
+		case "terror":
+			this.genero = "terror";
+			break;
+		case "comedia":
+			this.genero = "comedia";
+			break;
+		case "accion":
+			this.genero = "acción";
+			break;
+		case "romantica":
+			this.genero = "romántica";
+			break;
+		case "":
+			System.out.println("NO PUEDE CARGARSE UNA PELÍCULA SIN ACLARAR SU GÉNERO");
+			break;
+		default:
+			System.out.println("Género inválido");
+		}
+	}
+
+	public String getTitulo() {
+		return this.titulo;
+	}
+
+	public String getGenero() {
+		return this.genero;
+	}
+
+	public Integer getDuracion() {
+		return this.duracion;
+	}
+
+	public Integer getEdadMinima() {
+		return this.edadMinima;
+	}
+
+	/***
+	 * Compara que la edad del espectador sea igual o mayor a la edad mínima
+	 * 
+	 * @param edad
+	 * @return
+	 */
+
+	public boolean validarEdadMinima(Integer edad) {
+		if (edad >= this.edadMinima) {
+			return true;
+		}
+		System.out.println("NO ALCANZA LA EDAD MÍNIMA");
+		return false;
+	}
+
+}

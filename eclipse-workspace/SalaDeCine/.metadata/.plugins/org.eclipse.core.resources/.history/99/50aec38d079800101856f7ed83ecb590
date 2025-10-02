@@ -1,0 +1,30 @@
+package ar.edu.unlam.alumno.pb2.salaDeCineTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import ar.edu.unlam.alumno.pb2.salaDeCine.Espectador;
+import ar.edu.unlam.alumno.pb2.salaDeCine.Pelicula;
+
+public class TestPelículas {
+
+	@Test
+	public void cargarUnaPeliculaYvalidarSuGeneroYLaEdadDelEspectador() {
+		Espectador nuevoEspectador = new Espectador("Pepe", "Gómez", 16);
+		Pelicula nuevaPelicula = new Pelicula("Arma Mortal", "", 93, 16);
+
+		assertEquals("Arma Mortal", nuevaPelicula.getTitulo());
+		assertTrue(nuevaPelicula.validarEdadMinima(nuevoEspectador.getEdadCliente()));
+
+	}
+
+	@Test
+	public void cargarUnaPeliculaYvalidarSuGeneroYQueLaEdadMinimaSeaLaCorrecta() {
+
+		Espectador nuevoEspectador = new Espectador("Pepe", "Gómez", 16);
+		Pelicula nuevaPelicula = new Pelicula("La Máscara", "comedia", 93, 13);
+
+		assertTrue(nuevaPelicula.validarEdadMinima(nuevoEspectador.getEdadCliente()));
+	}
+}

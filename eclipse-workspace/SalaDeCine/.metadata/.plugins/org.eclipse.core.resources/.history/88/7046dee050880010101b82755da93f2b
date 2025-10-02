@@ -1,0 +1,18 @@
+package ar.edu.unlam.alumno.pb2.mainTrasladoDeMascotas;
+
+import ar.edu.unlam.alumno.pb2.clases.Traslados;
+
+public class Main {
+	private static Scanner teclado = new Scanner(System.in);
+	private static final int AGREGAR_DESTINO = 1, AGREGAR_VIAJE = 2, VER_RESUMEN = 3, SALIR = 9;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Traslados empresa;
+		String nombre;
+		double costoMínimo;
+		double costoPorKm;
+
+	}
+
+}
