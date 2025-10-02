@@ -7,8 +7,6 @@ import org.junit.Test;
 import ar.edu.unlam.alumno.pb2.salaDeCineSRC.Butaca;
 import ar.edu.unlam.alumno.pb2.salaDeCineSRC.Espectador;
 
-
-
 public class TestButacas {
 
 	private Butaca butaca = new Butaca();
@@ -21,6 +19,13 @@ public class TestButacas {
 
 	@Test
 	public void probarQueUnaButacaEstáOcupada() {
+		Espectador espectador = new Espectador("pepe", "gómez", 18);
+		butaca.setEspectador(espectador);
+		butaca.estaVendida();
+		assertFalse(butaca.getButacaDisponible());
+	}
+	@Test
+	public void probarQueUnaButacaEstáOcupada1() {
 		Espectador espectador = new Espectador("pepe", "gómez", 18);
 		butaca.setEspectador(espectador);
 		butaca.estaVendida();
