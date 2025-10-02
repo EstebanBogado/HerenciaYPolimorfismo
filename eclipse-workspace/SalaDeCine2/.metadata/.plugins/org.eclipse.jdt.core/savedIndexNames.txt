@@ -1,3 +1,0 @@
-INDEX VERSION 1.134+C:\Users\estebanito0602\git\repositoryTPSalaDeCine\TPSalaDeCine-PB2\SalaDeCine\.metadata\.plugins\org.eclipse.jdt.core
-1736949955.index
-3471255472.index
