@@ -48,7 +48,6 @@ public class HolaMundo {
 			System.out.println(prueba[i].getEntero());
 		}
 		System.out.println("tamaño " + enteros.length);
-		System.out.println("hashCode " + enteros.hashCode());
 		System.out.println("CHAU CHAU CHAU!!!");
 	}
 
